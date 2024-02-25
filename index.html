@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Order System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Welcome to the Coffee Order System</h1>
+    <button id="startOrderButton" class="button">Start your order here</button>
+
+    <div id="orderView">
+
+    <div id="orderForm" style="display: none;">
+        <h2>Choose your coffee:</h2>
+        <button class="coffeeButton">Decaf</button>
+        <button class="coffeeButton">Espresso</button>
+        <button class="coffeeButton">House Blend</button>
+        <button class="coffeeButton">Dark Roast</button>
+    </div>
+
+    <div id="orderConfiguration" style="display: none;">
+        <h2>Add condiments:</h2>
+        <label>
+            <input type="checkbox" name="condiment" value="Milk"> Milk
+        </label>
+        <label>
+            <input type="checkbox" name="condiment" value="Mocha"> Mocha
+        </label>
+        <label>`
+            <input type="checkbox" name="condiment" value="Soy"> Soy
+        </label>
+        <label>
+            <input type="checkbox" name="condiment" value="Whip"> Whip
+        </label>
+
+        <button id="confirmOrderButton" class="button">Confirm order</button>
+        
+    </div>
+    </div>
+
+    
+  </div>
+
+<script>
+
+    const startOrderButton = document.getElementById('startOrderButton');
+    const orderView = document.getElementById('orderView');
+    const orderForm = document.getElementById('orderForm');
+    const orderConfiguration = document.getElementById('orderConfiguration');
+
+    startOrderButton.addEventListener('click', () => {
+            startOrderButton.style.display = 'none';
+            orderForm.style.display = 'block';
+    });
+
+    const coffeeButtons = document.querySelectorAll('.coffeeButton');
+    coffeeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                    orderForm.style.display = 'none';
+                    orderConfiguration.style.display = 'block';
+            });
+    });
+</script>
+
+
+  </script>
+</body>
+
+</html>
